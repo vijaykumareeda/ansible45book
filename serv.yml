@@ -1,0 +1,63 @@
+---
+      - name: services 
+        hosts: vlab1
+        tasks: 
+           - name: sshd
+             service: name=sshd state=restarted enabled=yes 
+             tags: sshd
+             register: sshd
+           - debug: var=sshd
+
+           - name: httpd
+             service: name=httpd state=restarted enabled=yes
+             register: httpd
+           - debug: var=httpd
+             tags: httpd
+
+           - name: vsftpd
+             service: name=vsftpd state=restarted enabled=yes
+             register: vsftpd
+           - debug: var=vsftd
+             tags: vsftpd
+
+           - name: samba
+             service: name=smb state=restarted enabled=yes
+             register: smb
+           - debug: var=smb
+             tags: smb
+
+           - name: ntp
+             service: name=ntpd state=restarted enabled=yes
+             register: ntpd
+           - debug: var=ntpd
+             tags: ntpd
+
+           - name: nfs
+             service: name=nfs state=restarted enabled=yes
+             register: nfs
+           - debug: var=nfs
+             tags: nfs
+
+           - name: autofs
+             service: name=autofs state=restarted enabled=yes
+             register: autofs
+           - debug: var=autofs
+             tags: autofs
+
+           - name: rsyslog
+             service: name=rsyslog state=restarted enabled=yes
+             register: rsyslog
+           - debug: var=rsyslog
+             tags: rsyslog
+
+           - name: iptables
+             service: name=iptables state=stopped 
+             register: iptables
+           - debug: var=iptables
+             tags: iptables
+
+           - name: postfix
+             service: name=postfix state=restarted
+             register: postfix
+           - debug: var=postfix
+             tags: postfix
