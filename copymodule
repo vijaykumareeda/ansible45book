@@ -1,0 +1,8 @@
+---
+ - name: copy module
+   hosts: ansible-master-45
+   tasks: 
+      - name: fstab config file copy
+        copy: src=/etc/fstab dest=/tmp/vamsi/ remote_src=true
+        register: fstab
+      - debug: var=fstab
