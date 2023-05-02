@@ -1,0 +1,12 @@
+---
+ - name: copy
+   hosts: aws1
+   tasks: 
+      - lineinfile:
+            dest: /var/www/html/index.html
+            line1:
+                 'HI THIS IS VAMSI MATTAPARTHI'
+            line2:
+                 'VARAINS.COM'
+            line3:
+                 'AWS.ADMIN'
