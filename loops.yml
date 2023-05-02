@@ -1,0 +1,21 @@
+---
+ - name: loops
+   hosts: vlab1
+   tasks: 
+      - name: with items
+        file: 
+          dest: /tmp/"{{item}}" 
+          state: touch
+        loop:
+              - fl1
+              - fl2
+              - fl3
+              - fl4
+              - fl5
+      - name: service start
+        service: 
+            name: "{{item}}"
+            state: restarted
+        loop:
+              - httpd
+              - vsftpd
