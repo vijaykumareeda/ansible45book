@@ -1,0 +1,13 @@
+---
+ - name: create users
+   hosts: ans-client-23-A
+   tasks:
+     - name: create new users
+       user: 
+         name: "{{item}}" 
+         group: bat22a 
+         state: present
+       loop:
+           - user4
+           - user5
+           - user6
