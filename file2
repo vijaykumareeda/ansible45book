@@ -1,0 +1,11 @@
+- name: samba
+         yum: name=samba state=present
+         tags: smb
+    
+       - name: ntp
+         yum: name=ntp state=present
+         tags: ntp
+
+       - name: rsyslog
+         yum: name=rsyslog.x86_64 state=present
+         tags: rsyslog

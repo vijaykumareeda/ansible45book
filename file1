@@ -1,0 +1,15 @@
+---
+   - name: pkgs installation
+     hosts: vlab1
+     tasks: 
+       - name: httpd
+         yum: name=httpd state=present
+         tags: httpd
+    
+       - name: vsftpd
+         yum: name=vsftpd state=present
+         tags: vsftpd
+      
+       - name: ftp
+         yum: name=ftp state=present
+         tags: ftp
