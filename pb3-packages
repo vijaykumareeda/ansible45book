@@ -1,0 +1,13 @@
+---
+ - name: multiple packages install
+   hosts: all
+   tasks: 
+     - name: install the package
+       yum: name= "{{item}}" state=present
+       with_items:
+         - httpd
+         - ftp
+         - vsftpd
+         - telnet
+         - finger
+    
