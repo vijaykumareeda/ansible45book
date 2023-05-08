@@ -1,0 +1,6 @@
+---
+ - name: debug file
+   hosts: all
+   tasks: 
+     - name: display the below
+       debug: msg= "this is vara&naresh ins"
