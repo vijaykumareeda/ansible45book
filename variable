@@ -1,0 +1,9 @@
+---
+ - name: file level variables
+   hosts: vijay
+   vars:
+    os: "linux"
+    cloud: "aws"
+    tools: "devops"
+    tasks: 
+      - debug: msg= 'we know {{os}}'
