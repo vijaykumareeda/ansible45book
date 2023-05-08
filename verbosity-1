@@ -1,0 +1,13 @@
+---
+ - name: using verbosity
+   hosts: all
+   tasks: 
+     - name: verbosity
+       debug:
+        msg: "my hostname is {{ansible-hostname}}"
+	verbosity: 1
+     - name: task2
+       debug: 
+        var: 
+	    ipv4 is {{ansible_fact.defaults_ipv4}}
+	verbosity: 2
