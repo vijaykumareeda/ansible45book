@@ -1,0 +1,13 @@
+---
+ - name: multiple services restarted
+   hosts: all
+   tasks:
+     - name: restart the service
+       service: name= "{{item}}" state=restarted
+       with_items:
+           - vsftpd
+           - httpd
+           - network
+           - sshd
+           - nfs
+           - autofs
