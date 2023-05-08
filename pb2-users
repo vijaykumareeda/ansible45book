@@ -1,0 +1,13 @@
+---
+ - name: multile users create
+   hosts: all
+   tasks: 
+     - name: user creation
+       user: name= "{{item}}" state=present
+       with_items: 
+           - vara1
+           - vara2
+           - vara3
+           - naresh1
+           - naresh2
+           - naresh3
