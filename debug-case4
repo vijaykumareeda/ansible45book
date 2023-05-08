@@ -1,0 +1,8 @@
+---
+ - name: using variable
+   hosts: all
+   tasks: 
+      - name: using variable
+        debug: 
+	 msg: "this is hostname {{inventory_hostname}}"
+
