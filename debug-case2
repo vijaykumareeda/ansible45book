@@ -1,0 +1,10 @@
+---
+ - name: message perameters
+   hosts: all
+   tasks: 
+     - name: multiple lines displaying
+       debug: 
+        msg: 
+	 - God is greate 
+	 - without god iam nothing
+	 - JESUS LOVES YOU
